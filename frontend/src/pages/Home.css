@@ -1,0 +1,43 @@
+.second-section p{
+    color:#6c757d;
+}
+.second-section{
+    background: #F8f9fa;
+}
+.fourth-section{
+    background: #F8f9fa;
+}
+.fifth-section_desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sixth-section_imgs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.sixth-section_imgs img{
+    width:632px;
+    height: 300px;
+}
+.seventh-section{
+    background: #F8f9fa;
+}
+.seventh-section_desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    width: 90%;
+}
+.seventh-section_desc p{
+    color:#6c757d;
+}
+.first-card{
+    background-color: white;
+    width: 300px;
+    padding-top:5px;
+}

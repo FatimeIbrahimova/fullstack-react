@@ -1,0 +1,12 @@
+.footer{
+    background-color: #262626;
+}
+li{
+    list-style: none;
+}
+.footer-right li{
+    color:red;
+}
+h3{
+    color:white;
+}
