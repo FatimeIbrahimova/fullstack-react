@@ -10,3 +10,11 @@ li{
 h3{
     color:white;
 }
+
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}

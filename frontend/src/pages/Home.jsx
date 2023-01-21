@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import "./Home.css"
 
@@ -11,6 +12,23 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const Home = () => {
+    const [users,setUsers]=useState([])
+
+    const getData=async()=>{
+  const res=await axios.get("http://localhost:9090/users")
+  setUsers(res.data)
+  console.log(res.data);
+}
+useEffect(()=>{
+  getData()
+},[])
+// console.log(users);
+
+const handleDelete=(id)=>{
+    console.log(id);
+    axios.delete(`http://localhost:9090/users/${id}`)
+    console.log("delete")
+}
     return (
         <>
             <div className='hero-section' style={{ height: "50vh" }}>
@@ -109,12 +127,20 @@ const Home = () => {
                     <h1>Testimonial</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
                 </div>
-                <div className='cards'>
-                    <div className='first-card'>
-                        <h1>John Smith</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam explicabo, animi dignissimos, assumenda labore veniam officia tempore maxime, voluptatibus sunt libero cumque quae magni ut eveniet illo recusandae laboriosam nam.</p>
+                
+                    <div className='api-card'>
+                    {users.map((user)=>(
+                        <div className='cards'>
+                          <div className='first-card' key={user.id}>
+                          <h1>{user.fullName}</h1>
+                          <p><span style={{color:"#A6A6A6"}}>{user.job}</span></p>
+                          <p>{user.description}</p>
+                          <button className='card-btn' onClick={()=>handleDelete(user.id)}>Delete</button>
+                      </div>
+                      </div>
+                    ))}
                     </div>
-                </div>
+                   
             </div>
         </>
 

@@ -3,7 +3,8 @@ import "./style.css"
 
 const Footer = () => {
   return (
-    <div className='footer' style={{ display: "flex", justifyContent: "space-evenly" }}>
+   <div className='footer'>
+    <div style={{ display: "flex", justifyContent: "space-evenly"}}>
       <div className='footer-left' style={{ width: 300, paddingTop: 30 }}>
         <h3>ABOUT THE HEXA TEMPLATE</h3>
         <p style={{ color: "#ffffff80" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
@@ -35,6 +36,13 @@ const Footer = () => {
         </ul>
       </div>
     </div>
+    <div className='footer-bottom'>
+      <span style={{color:"#ffffff80"}}>Copyright © 2023 All rights reserved</span>
+      <span style={{color:"#ffffff80",marginRight:5}}> | This template is made with</span>
+      <i class="fa-regular fa-heart" style={{color:"#ffffff80",marginRight:5}}></i>
+      <span style={{color:"#ffffff80",marginRight:5}}>by </span><span style={{color:"red"}}>Colorlib</span>
+    </div>
+   </div>
   )
 }
 
